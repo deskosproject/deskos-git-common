@@ -1,0 +1,9 @@
+= deskos-git-common: Utilities to work with DeskOS Git repos
+
+This git repo contains the following scripts that make interfacing with DeskOS Git repositories as easy as possible.
+
+Tools:
+
+* get_sources.sh: when run from inside a package git checkout, will download the relevant non-text sources from the lookaside cache and drop them into the SOURCES/ dir; note: it will generate 0 byte files in place, rather than download them.
+
+* into_srpm.sh: Builds the SRPM.
