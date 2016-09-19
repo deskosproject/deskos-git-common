@@ -23,7 +23,7 @@ get_sources.sh
 SPECFILE=$(cd SPECS; ls *.spec)
 
 # Build SRPM
-rpmbuild --define "%_topdir `pwd`" -bs --nodeps --define "%dist .el7.deskos" SPECS/${SPECFILE}
+rpmbuild --define "%_topdir `pwd`" -bs --nodeps --define "%dist .el7.deskos" --define "%rhel 7" --define "%centos 7" --define "%fedora 0" SPECS/${SPECFILE}
 
 if [[ $? -ne 0 ]]; then
   echo "$0 failed to recreate SRPM"
