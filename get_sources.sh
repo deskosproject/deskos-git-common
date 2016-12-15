@@ -45,7 +45,9 @@ while read -r fsha fname ; do
       # Remove SOURCES from filename
       realfname=${fname#SOURCES}
       # Download the file
-      curl --silent -f "${SURL}/${pn}/${realfname}" -o "${fname}"
+      url="${SURL}/${pn}/${realfname}"
+      echo "Retrieving ${url}"
+      curl -L --silent -f "${url}" -o "${fname}"
     else
       echo "${fname} exists, skipping"
     fi
